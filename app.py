@@ -15,8 +15,20 @@ def home_page():
 
 @app.route('/<name>')
 def profile(name):
-	return render_template('index.html', name=name)
+	hiName = ". Hello, " + str(name)
+	return render_template('index.html', name=hiName)
 
+@app.route('/first-year', methods=['GET'])
+def first_year():
+  return render_template('first-year.html')
+
+@app.route('/second-year', methods=['GET'])
+def second_year():
+  return render_template('second-year.html')
+
+@app.route('/third-year', methods=['GET'])
+def third_year():
+  return render_template('third-year.html')
 
 @app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
